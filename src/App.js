@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import theme from "utils/theme";
 
-import { Navigation } from "components";
+import { Navigation, Wrapper } from "components";
 
 function App() {
   return (
@@ -16,14 +16,22 @@ function App() {
             { content: "Homepage", to: "/" },
             { content: "Budget", to: "/budget" },
           ]}
+          RightElement={(
+            <div>
+              <button>pl</button>
+              <button>el</button>
+            </div>
+          )}
         />
 
-        <Switch>
-          <Route exact path="/">
-            Homepage
-          </Route>
-          <Route path="/budget">Budget</Route>
-        </Switch>
+        <Wrapper>
+          <Switch>
+            <Route exact path="/">
+              Homepage
+            </Route>
+            <Route path="/budget">Budget</Route>
+          </Switch>
+        </Wrapper>
       </Router>
     </ThemeProvider>
   );

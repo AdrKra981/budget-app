@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Wrapper from '../Wrapper';
 
 export const Container = styled.div`
     display: flex;
@@ -9,4 +10,9 @@ export const Container = styled.div`
 
 export const List = styled.ul`
     display: flex;
+`;
+
+export const NavigationWrapper = styled(Wrapper)`
+    display: flex;
+    justify-content: space-between;
 `;
