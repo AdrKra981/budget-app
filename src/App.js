@@ -5,8 +5,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import theme from "utils/theme";
 
 import { Navigation, Wrapper } from "components";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const {i18n} = useTranslation();
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -14,12 +17,12 @@ function App() {
         <Navigation
           items={[
             { content: "Homepage", to: "/" },
-            { content: "Budget", to: "/budget" },
+            { content: "Budget page", to: "/budget" },
           ]}
           RightElement={(
             <div>
-              <button>pl</button>
-              <button>el</button>
+              <button onClick={() => i18n.changeLanguage('pl')}>pl</button>
+              <button onClick={() => i18n.changeLanguage('en')}>en</button>
             </div>
           )}
         />
@@ -37,4 +40,12 @@ function App() {
   );
 }
 
-export default App;
+function RootApp(){
+  return(
+    <React.Suspense fallback="Loading ...">
+      <App />
+    </React.Suspense>
+  );
+}
+
+export default RootApp;
