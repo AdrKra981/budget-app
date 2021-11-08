@@ -9,6 +9,7 @@ import theme from "utils/theme";
 import { Button, LoadingIndicator, Navigation, Wrapper } from "components";
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import Budget from "pages/Budget";
 
 function App({ budget, budgetCategories, fetchBudget, fetchBudgetCategories }) {
   const { i18n } = useTranslation();
@@ -38,7 +39,9 @@ function App({ budget, budgetCategories, fetchBudget, fetchBudgetCategories }) {
             <Route exact path="/">
               Homepage
             </Route>
-            <Route path="/budget">Budget</Route>
+            <Route path="/budget">
+              <Budget></Budget>
+            </Route>
           </Switch>
         </Wrapper>
       </Router>
