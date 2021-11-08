@@ -8,7 +8,7 @@ const Item = React.memo(({ item, onClickHandler, isActive }) => (
   ))
 
 const ToggleableList = ({ items }) => {
-  const [selectedItem, setSelectedItem] = useState(true);
+  const [selectedItem, setSelectedItem] = useState(false);
 
   return (
     <>
