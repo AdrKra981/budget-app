@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import 'styled-components/macro';
 
 const Item = React.memo(({ item, onClickHandler, isActive }) => (
-    <div>
+    <div css={`
+    cursor: poitner;
+    `}>
       <item.Trigger onClick={onClickHandler} />
       {isActive && item.children}
     </div>
