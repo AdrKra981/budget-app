@@ -7,7 +7,7 @@ import {
 } from 'data/constans';
 
 const initialState = {
-    loadingState: {},
+    loadingState: null,
     allCategories: [],
 };
 
