@@ -1,11 +1,27 @@
 export const getBudget = (id) => {
-    const promise = fetch(`${process.env.REACT_APP_API_URL}/budgets/${id}/?_embed=transactions`);
+  const promise = fetch(
+    `${process.env.REACT_APP_API_URL}/budgets/${id}/?_embed=transactions`
+  );
 
-    return promise;
-}
+  return promise;
+};
 
 export const getBudgetCategories = (id) => {
-    const promise = fetch(`${process.env.REACT_APP_API_URL}/budgets/${id}/budgetCategories`);
+  const promise = fetch(
+    `${process.env.REACT_APP_API_URL}/budgets/${id}/budgetCategories`
+  );
 
-    return promise;
-}
+  return promise;
+};
+
+export const addTransaction = ({ budgetId, data }) => {
+  const promise = fetch(`${process.env.REACT_APP_API_URL}/budgets/${budgetId}/transactions`, {
+    method: "POST",
+    headers: {
+        'Content-type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+
+  return promise;
+};

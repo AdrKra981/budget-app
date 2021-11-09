@@ -1,6 +1,8 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./index.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import theme from "utils/theme";
 
@@ -8,6 +10,8 @@ import { Button, LoadingIndicator, Navigation, Wrapper } from "components";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Budget from "pages/Budget";
+
+toast.configure();
 
 function App() {
   const { i18n } = useTranslation();
